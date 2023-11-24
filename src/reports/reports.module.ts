@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Report } from './entities/report.entity';
-import { ReportsController } from './reports.controller';
-import { ReportsService } from './reports.service';
-import { MulterModule } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
+import { Module } from '@nestjs/common'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { Report } from './entities/report.entity'
+import { ReportsController } from './reports.controller'
+import { ReportsService } from './reports.service'
+import { MulterModule } from '@nestjs/platform-express'
+import { diskStorage } from 'multer'
 
 @Module({
   imports: [
@@ -22,4 +22,4 @@ import { diskStorage } from 'multer';
   providers: [ReportsService],
   exports: [ReportsService]
 })
-export class ReportsModule {}
+export class ReportsModule { }

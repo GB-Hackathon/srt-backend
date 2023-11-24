@@ -12,9 +12,9 @@ export class UsersService {
   constructor(
     @InjectRepository(User)
     private readonly users: Repository<User>
-  ) {}
+  ) { }
 
-  public async createUser (createUserDto: CreateUserDto): Promise<void> {
+  public async createUser(createUserDto: CreateUserDto): Promise<void> {
     const salt = randomBytes(4).toString('hex')
     const password = await this.hashPassword(createUserDto.password, salt)
 
@@ -26,11 +26,11 @@ export class UsersService {
     })
   }
 
-  public async checkLoginClaim (email: string): Promise<boolean> {
+  public async checkLoginClaim(email: string): Promise<boolean> {
     return await this.findUserByEmail(email) !== undefined
   }
 
-  public async findUserByEmail (email: string, secret = false): Promise<User | undefined> {
+  public async findUserByEmail(email: string, secret = false): Promise<User | undefined> {
     return await this.users.findOne({
       where: { email },
       select: {
@@ -44,24 +44,24 @@ export class UsersService {
     }) ?? undefined
   }
 
-  public async findAllUser (): Promise<User[]> {
+  public async findAllUser(): Promise<User[]> {
     return await this.users.find()
   }
 
-  public async findUser (id: number): Promise<User | undefined> {
+  public async findUser(id: number): Promise<User | undefined> {
     return await this.users.findOne({
       where: { id }
     }) ?? undefined
   }
 
-  public async updateUser (id: number, updateUserDto: UpdateUserDto): Promise<void> {
+  public async updateUser(id: number, updateUserDto: UpdateUserDto): Promise<void> {
     await this.users.update(
       { id },
       updateUserDto
     )
   }
 
-  public async hashPassword (password: string, salt: string): Promise<string> {
+  public async hashPassword(password: string, salt: string): Promise<string> {
     return shajs('SHA512').update(salt + password).digest('hex')
-  } 
+  }
 }

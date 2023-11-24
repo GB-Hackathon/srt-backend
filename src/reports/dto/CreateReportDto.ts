@@ -1,7 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsInt, IsString } from 'class-validator'
+import { IsString } from 'class-validator'
 
 export class CreateReportDto {
+  @IsString()
+  @ApiProperty()
+  public readonly type: string
+
   @IsString()
   @ApiProperty()
   public readonly title: string

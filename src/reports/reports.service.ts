@@ -6,22 +6,23 @@ import { CreateReportDto } from './dto/CreateReportDto'
 
 @Injectable()
 export class ReportsService {
-  constructor (
+  constructor(
     @InjectRepository(Report)
     private readonly reports: Repository<Report>
-  ) {}
+  ) { }
 
   public async createReport(userId: number, image: Express.Multer.File, createReportDto: CreateReportDto): Promise<void> {
     await this.reports.insert({
+      type: createReportDto.type,
       image: image.filename,
       title: createReportDto.title,
       content: createReportDto.content,
       location: createReportDto.location,
       date: createReportDto.date,
-      owner: userId
+      userId: userId
     })
   }
-
+  
   public async findAllReport(): Promise<Report[]> {
     return this.reports.find()
   }

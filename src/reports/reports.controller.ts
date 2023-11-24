@@ -10,9 +10,9 @@ import { Response } from 'express'
 @UseGuards(AuthGuard)
 @Controller('reports')
 export class ReportsController {
-  constructor (
+  constructor(
     private reportsService: ReportsService
-  ) {}
+  ) { }
 
   @Post()
   @UseInterceptors(FileInterceptor('image'))

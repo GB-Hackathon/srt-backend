@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { AuthMiddleware } from 'src/auth/auth.middleware'
 import { AuthModule } from 'src/auth/auth.module'
+import { MapModule } from 'src/map/map.module'
 import { ReportsModule } from 'src/reports/reports.module'
 import { UsersModule } from 'src/users/users.module'
 
@@ -25,7 +26,8 @@ import { UsersModule } from 'src/users/users.module'
     }),
     UsersModule,
     ReportsModule,
-    AuthModule
+    AuthModule,
+    MapModule
   ],
 })
 export class AppModule implements NestModule {

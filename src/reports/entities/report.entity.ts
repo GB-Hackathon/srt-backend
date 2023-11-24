@@ -18,6 +18,11 @@ export class Report {
   @Column()
   @IsString()
   @ApiProperty()
+  public readonly type: string
+
+  @Column()
+  @IsString()
+  @ApiProperty()
   public readonly image: string
 
   @Column()
@@ -44,7 +49,7 @@ export class Report {
   @Column()
   @IsInt()
   @ApiProperty()
-  public readonly owner: number
+  public readonly userId: number
 
   @CreateDateColumn({
     name: 'createdat',

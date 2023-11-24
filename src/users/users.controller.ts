@@ -9,9 +9,9 @@ import { Response } from 'express'
 @ApiTags('users')
 @Controller('users')
 export class UsersController {
-  constructor (
+  constructor(
     private usersService: UsersService
-  ) {}
+  ) { }
 
   @Post()
   public async createUser(@Body() createUserDto: CreateUserDto) {
