@@ -13,7 +13,6 @@ export class AuthController {
   ) {}
 
   @Get('/status')
-  @UseGuards(AuthGuard)
   @ApiCookieAuth()
   public getLoginStatus (@Res({ passthrough: true }) res: Response) {
     const userId = res.locals.userId
