@@ -14,11 +14,20 @@ export class ReportsController {
     private reportsService: ReportsService
   ) { }
 
+  // @Post()
+  // @UseInterceptors(FileInterceptor('image'))
+  // public async createReport(@Res({ passthrough: true }) res: Response, @UploadedFile() image: Express.Multer.File, @Body() createReportDto: CreateReportDto) {
+  //   const userId = res.locals.userId
+  //   await this.reportsService.createReport(userId, image, createReportDto)
+
+  //   return {
+  //     success: true
+  //   }
+  // }
   @Post()
-  @UseInterceptors(FileInterceptor('image'))
-  public async createReport(@Res({ passthrough: true }) res: Response, @UploadedFile() image: Express.Multer.File, @Body() createReportDto: CreateReportDto) {
+  public async createReport(@Res({ passthrough: true }) res: Response, @Body() createReportDto: CreateReportDto) {
     const userId = res.locals.userId
-    await this.reportsService.createReport(userId, image, createReportDto)
+    await this.reportsService.createReport(userId, createReportDto)
 
     return {
       success: true

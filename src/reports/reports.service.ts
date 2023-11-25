@@ -11,10 +11,9 @@ export class ReportsService {
     private readonly reports: Repository<Report>
   ) { }
 
-  public async createReport(userId: number, image: Express.Multer.File, createReportDto: CreateReportDto): Promise<void> {
+  public async createReport(userId: number, createReportDto: CreateReportDto): Promise<void> {
     await this.reports.insert({
       type: createReportDto.type,
-      image: image.filename,
       title: createReportDto.title,
       content: createReportDto.content,
       location: createReportDto.location,

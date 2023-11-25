@@ -20,10 +20,10 @@ export class Report {
   @ApiProperty()
   public readonly type: string
 
-  @Column()
-  @IsString()
-  @ApiProperty()
-  public readonly image: string
+  // @Column()
+  // @IsString()
+  // @ApiProperty()
+  // public readonly image: string
 
   @Column()
   @IsString()
