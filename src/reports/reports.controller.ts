@@ -51,4 +51,15 @@ export class ReportsController {
       body: report
     }
   }
+
+  @Get('by-user')
+  public async findReportByUserId(@Res({ passthrough: true }) res: Response) {
+    const userId = res.locals.userId
+    const reports = await this.reportsService.findReportByUserId(userId)
+    
+    return {
+      success: true,
+      body: reports
+    }
+  }
 }

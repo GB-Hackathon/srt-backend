@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsInt, IsNumber, IsPositive, IsString, MaxLength } from "class-validator";
+import { IsDate, IsInt, IsPositive, IsString, MaxLength } from "class-validator";
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({
