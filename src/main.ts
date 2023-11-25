@@ -9,6 +9,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api')
   app.use(cookieParser())
+  app.enableCors()
   app.useGlobalPipes(new ValidationPipe({
     always: true,
     whitelist: true,
@@ -36,6 +37,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, docs)
   SwaggerModule.setup('/api', app, document)
 
-  await app.listen(3000);
+  await app.listen(80);
 }
 bootstrap();

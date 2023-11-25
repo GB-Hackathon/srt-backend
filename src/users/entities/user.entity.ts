@@ -38,6 +38,11 @@ export class User {
   @ApiProperty()
   public readonly password: string
 
+  @Column()
+  @IsString()
+  @ApiProperty()
+  public readonly tel: string
+
   @Column({
     select: false
   })

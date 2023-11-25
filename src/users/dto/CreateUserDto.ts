@@ -16,4 +16,8 @@ export class CreateUserDto {
   @IsString()
   @ApiProperty()
   public readonly password: string
+
+  @IsString()
+  @ApiProperty()
+  public readonly tel: string
 }

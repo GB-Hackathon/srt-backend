@@ -21,6 +21,7 @@ export class UsersService {
     await this.users.insert({
       email: createUserDto.email,
       name: createUserDto.name,
+      tel: createUserDto.tel,
       password,
       salt
     })
@@ -37,6 +38,7 @@ export class UsersService {
         id: true,
         email: true,
         name: true,
+        tel: true,
         createdAt: true,
         password: secret,
         salt: secret

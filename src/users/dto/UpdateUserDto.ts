@@ -6,4 +6,8 @@ export class UpdateUserDto {
   @IsString()
   @ApiProperty()
   public readonly email: string
+
+  @IsString()
+  @ApiProperty()
+  public readonly tel: string
 }
