@@ -33,8 +33,6 @@ export class ReportsService {
   }
 
   public async findReportByUserId(userId: number): Promise<Report[]> {
-    return await this.reports.find({
-      where: { userId }
-    })
+    return await this.reports.findBy({ userId })
   }
 }

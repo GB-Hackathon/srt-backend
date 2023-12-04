@@ -6,16 +6,16 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8080:80
+      - 3000:3000
 
-  # db:
-  #   image: mariadb
-  #   expose:
-  #     - 3306:3306
-  #   environment:
-  #     - MARIADB_ROOT_PASSWORD=root
-  #     - MARIADB_DATABASE=srt
-  #     - MARIADB_USER=srt
-  #     - MARIADB_PASSWORD=srtpassword
-  #   volumes:
-  #     - ./data/db:/var/lib/mysql
+  db:
+    image: mariadb
+    expose:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=srt
+      - MARIADB_USER=srt
+      - MARIADB_PASSWORD=srtpassword
+    volumes:
+      - ./data/db:/var/lib/mysql

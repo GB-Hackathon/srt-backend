@@ -15,7 +15,7 @@ import { UsersModule } from 'src/users/users.module'
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
-        host: configService.get('DATABASE_HOST', 'srt-db.cukiuqrdabzk.ap-northeast-2.rds.amazonaws.com'),
+        host: configService.get('DATABASE_HOST', 'db'),
         port: configService.get('DATABASE_PORT', 3306),
         username: configService.get('DATABASE_USERNAME', 'srt'),
         password: configService.get('DATABASE_PASSWORD', 'srtpassword'),
