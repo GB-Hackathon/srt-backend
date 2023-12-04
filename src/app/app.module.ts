@@ -17,8 +17,8 @@ import { UsersModule } from 'src/users/users.module'
         type: 'mysql',
         host: configService.get('DATABASE_HOST', 'db'),
         port: configService.get('DATABASE_PORT', 3306),
-        username: configService.get('DATABASE_USERNAME', 'srt'),
-        password: configService.get('DATABASE_PASSWORD', 'srtpassword'),
+        username: configService.get('DATABASE_USERNAME', 'root'),
+        password: configService.get('DATABASE_PASSWORD', 'root'),
         database: configService.get('DATABASE_SCHEMA', 'srt'),
         synchronize: configService.get('DATABASE_SYNC', true),
         autoLoadEntities: true
