@@ -31,7 +31,8 @@ export class AuthController {
     res.cookie('TOKEN', token)
 
     return {
-      success: true
+      success: true,
+      token
     }
   }
 }

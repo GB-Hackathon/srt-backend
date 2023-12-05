@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Get, NotFoundException, Param, Patch, Post, Res, UseGuards } from '@nestjs/common'
+import { Body, ConflictException, Controller, Get, NotFoundException, Param, Patch, Post, Put, Res, UseGuards } from '@nestjs/common'
 import { UsersService } from './users.service'
 import { CreateUserDto } from './dto/CreateUserDto'
 import { UpdateUserDto } from './dto/UpdateUserDto'
@@ -65,7 +65,7 @@ export class UsersController {
     return await this.findUser(userId)
   }
 
-  @Patch(':userId')
+  @Put(':userId')
   public async updateUser(@Param('userId') userId: number, @Body() updateUserDto: UpdateUserDto) {
     const user = await this.usersService.findUser(userId)
 
